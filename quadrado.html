@@ -1,0 +1,40 @@
+<html>
+    <body>
+         <canvas id="tagCanvas" width="1200px" height="500px"style="background-color:skyblue;border: 1px solid #000;"></canvas>
+         <script>
+            var canvas = document.getElementById("tagCanvas");
+            var desenhar = canvas.getContext("2d");
+            var x = 10;
+            var y = 10;
+            var velocidadeX = 5;
+            var velocidadeY = 5;
+
+
+            
+            function animacao()
+            {     
+            	  desenhar.clearRect(0, 0,canvas.width,canvas.height);
+
+            	  if (y+100 >= canvas.height) 
+            	  {
+                    velocidadeY=velocidadeY * -1;
+            	  }
+            	  if (y <= 0 ) 
+            	  {
+                    velocidadeY=velocidadeY * -1;
+            	  }
+            	  if (x+100 >= canvas.width) 
+            	  {
+                    velocidadeX=velocidadeX * -1;
+            	  }
+            	  if (x <= 0 ) 
+            	  {
+                    velocidadeX=velocidadeX * -1;
+            	  }
+
+                  desenhar.fillRect(x=x+velocidadeX, y=y+velocidadeY,100, 100);	
+            }
+            setInterval(animacao, 50);
+         </script>
+    </body>	
+</html>
